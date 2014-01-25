@@ -1,0 +1,11 @@
+<section data-ng-controller="ShippingController" data-ng-init="find()">
+	<ul class="shipping unstyled">
+		<li data-ng-repeat="address in shipping">
+			<span>{{address.created | date:'medium'}}</span> /
+			<span>{{address.user.name}}</span>
+			<h2><a data-ng-href="#!/shipping/{{address._id}}">{{address.title}}</a></h2>
+			<div>{{address.content}}</div>
+		</li>
+	</ul>
+	<h1 data-ng-hide="!shipping || shipping.length">No shipping addresses yet. <br> Why don't you <a href="/#!/shipping/create">Create One</a>?</h1>
+</section>
