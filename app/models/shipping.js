@@ -15,12 +15,27 @@ var ShippingSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    title: {
+    name: {
         type: String,
         default: '',
         trim: true
     },
-    content: {
+    address: {
+        type: String,
+        default: '',
+        trim: true
+    },
+    city: {
+        type: String,
+        default: '',
+        trim: true
+    },
+    state: {
+        type: String,
+        default: '',
+        trim: true
+    },
+    zip: {
         type: String,
         default: '',
         trim: true
@@ -34,9 +49,9 @@ var ShippingSchema = new Schema({
 /**
  * Validations
  */
-ShippingSchema.path('title').validate(function(title) {
-    return title.length;
-}, 'Title cannot be blank');
+ShippingSchema.path('address').validate(function(address) {
+    return address.length;
+}, 'Address cannot be blank');
 
 /**
  * Statics

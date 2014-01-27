@@ -5,15 +5,15 @@ angular.module('mean.shipping').controller('ShippingController', ['$scope', '$ro
 
     $scope.create = function() {
         var shipping = new Shipping({
-            title: this.title,
-            content: this.content
+            name: this.name,
+            address: this.address
         });
         shipping.$save(function(response) {
             $location.path('shipping/' + response._id);
         });
 
-        this.title = '';
-        this.content = '';
+        this.name = '';
+        this.address = '';
     };
 
     $scope.remove = function(shipping) {
