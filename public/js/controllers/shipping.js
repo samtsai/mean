@@ -57,4 +57,8 @@ angular.module('mean.shipping').controller('ShippingController', ['$scope', '$ro
             $scope.shipping = shipping;
         });
     };
+
+    $scope.max = 100;
+
+    // $scope.value =
 }]);
