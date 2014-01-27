@@ -20,7 +20,12 @@ var ShippingSchema = new Schema({
         default: '',
         trim: true
     },
-    address: {
+    address1: {
+        type: String,
+        default: '',
+        trim: true
+    },
+    address2: {
         type: String,
         default: '',
         trim: true
@@ -49,8 +54,8 @@ var ShippingSchema = new Schema({
 /**
  * Validations
  */
-ShippingSchema.path('address').validate(function(address) {
-    return address.length;
+ShippingSchema.path('address1').validate(function(address1) {
+    return address1.length;
 }, 'Address cannot be blank');
 
 /**

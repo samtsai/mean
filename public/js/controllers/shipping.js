@@ -6,7 +6,8 @@ angular.module('mean.shipping').controller('ShippingController', ['$scope', '$ro
     $scope.create = function() {
         var shipping = new Shipping({
             name: this.name,
-            address: this.address
+            address1: this.address1,
+            address2: this.address2,
         });
         shipping.$save(function(response) {
             $location.path('shipping/' + response._id);
